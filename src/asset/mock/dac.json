@@ -1,0 +1,50 @@
+{
+    "meta":{
+        "title": "Megatron",
+        "createdOn":"",
+        "updatedOn":"",
+        "updatedBy":"Murlidhar Varma"
+    },
+    "groups":[
+        {
+            "name": "DMZ1",
+            "desc": "Demilitrized Zone 1",
+            "components":[
+                {
+                    "id":"1",
+                    "type":"External System",
+                    "name": "Consumer",
+                    "desc": "User Experience",
+                    "tags": ["enc","regulatory","pii","pci"]
+                },
+                {
+                    "id":"2",
+                    "type":"External System",
+                    "name": "Akamai",
+                    "desc": "GTM",
+                    "tags": ["ext","enc","regulatory","pii","pci"]
+                }
+            ]
+        },
+        {
+            "name": "DMZ2",
+            "desc": "Demilitrized Zone 2",
+            "components":[
+                {   
+                    "id":"3",
+                    "type":"Pass Through",
+                    "name": "F5",
+                    "desc": "USA",
+                    "tags": ["enc","regulatory","pii","pci"]
+                },
+                {
+                    "id":"4",
+                    "type":"Pass Through",
+                    "name": "F5",
+                    "desc": "India",
+                    "tags": ["ext","enc","regulatory","pii","pci"]
+                }
+            ]
+        }
+    ]
+}

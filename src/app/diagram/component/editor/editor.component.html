@@ -1,0 +1,12 @@
+<div class="main-container">
+    <div class="editor-container">
+        <pre>
+            {{(spec && spec!=null?spec:{"msg": "none"}) | json}}
+        </pre>
+    </div>
+
+    <div class="diag-container">
+        <diagram [spec]="spec"></diagram>
+    </div>
+
+</div>

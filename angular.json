@@ -36,7 +36,8 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              }
+              },
+              "src/asset"
             ],
             "styles": [
               "src/styles.scss"

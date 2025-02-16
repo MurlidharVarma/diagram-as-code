@@ -1,0 +1,38 @@
+.group-container{
+
+    background: lightblue;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    margin: 20px 0px;
+    padding: 10px;
+}
+
+.group-name{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.group-desc{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    font-weight: lighter;
+    margin-bottom: 5px;;
+}
+
+.group-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    min-width: 100%;
+}

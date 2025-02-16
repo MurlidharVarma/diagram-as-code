@@ -1,0 +1,7 @@
+<div *ngIf="group && group!=null" class="group-container">
+    <div class="group-name">{{group?.name}}</div>
+    <div class="group-desc">{{group?.desc}}</div>
+    <div class="group-content">
+        <box *ngFor="let box of group?.components" [box]="box"></box>
+    </div>
+</div>

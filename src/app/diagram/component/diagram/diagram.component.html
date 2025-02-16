@@ -1,0 +1,3 @@
+<div *ngIf="spec && spec!=null" class="diagram-container">
+    <box-group *ngFor="let group of spec.groups" [group]="group"></box-group>
+</div>

@@ -1,0 +1,31 @@
+.box-container{
+    width: 150px;
+    height: 75px;
+
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+
+    background: yellow;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 5px 0px;
+    margin-right: 75px;
+}
+
+.box-name{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.box-desc{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10px;
+    font-weight: lighter;
+}
