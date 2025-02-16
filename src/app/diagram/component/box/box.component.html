@@ -1,4 +1,4 @@
-<div *ngIf="box && box!=null" class="box-container" [id]="box.id">
+<div *ngIf="box && box!=null" class="box-container" [id]="box.id" [attr.ref]="box.ref">
     <div class="box-name">{{box?.name}}</div>
     <div class="box-desc">{{box?.desc}}</div>
 </div>

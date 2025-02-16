@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, QueryList, ViewChildren } from '@angular/core';
 import Group from '../../model/group.model';
+import { BoxComponent } from '../box/box.component';
 
 @Component({
   standalone: false,
@@ -10,6 +11,8 @@ import Group from '../../model/group.model';
 export class BoxGroupComponent {
   @Input("group")
   group: Group | undefined;
+
+  @ViewChildren(BoxComponent) boxes: QueryList<BoxComponent>;
 
   constructor(){}
 

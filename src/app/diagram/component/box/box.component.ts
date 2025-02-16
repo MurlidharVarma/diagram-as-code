@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 import Box from '../../model/box.model';
 
 @Component({
@@ -11,6 +11,8 @@ export class BoxComponent {
 
   @Input("box")
   box: Box | undefined;
+
+  constructor(public elementRef: ElementRef){}
 
 
 }

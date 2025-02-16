@@ -11,14 +11,16 @@
             "desc": "Demilitrized Zone 1",
             "components":[
                 {
-                    "id":"1",
+                    "id":"Consumer",
+                    "ref":"1",
                     "type":"External System",
                     "name": "Consumer",
                     "desc": "User Experience",
                     "tags": ["enc","regulatory","pii","pci"]
                 },
                 {
-                    "id":"2",
+                    "id":"Akamai",
+                    "ref":"2",
                     "type":"External System",
                     "name": "Akamai",
                     "desc": "GTM",
@@ -31,20 +33,44 @@
             "desc": "Demilitrized Zone 2",
             "components":[
                 {   
-                    "id":"3",
+                    "id":"F5-USA",
+                    "ref":"3",
                     "type":"Pass Through",
                     "name": "F5",
                     "desc": "USA",
                     "tags": ["enc","regulatory","pii","pci"]
                 },
                 {
-                    "id":"4",
+                    "id":"F5-India",
+                    "ref":"4",
                     "type":"Pass Through",
                     "name": "F5",
                     "desc": "India",
                     "tags": ["ext","enc","regulatory","pii","pci"]
                 }
             ]
+        }
+    ],
+    "connections":[
+        {
+            "src": "Consumer",
+            "dest": "Akamai",
+            "icon":["enc"]
+        },
+        {
+            "src": "Akamai",
+            "dest": "F5-India",
+            "icon":["enc"]
+        },
+        {
+            "src": "Akamai",
+            "dest": "F5-USA",
+            "icon":["enc"]
+        },
+        {
+            "src": "Consumer",
+            "dest": "F5-USA",
+            "icon":["enc"]
         }
     ]
 }
