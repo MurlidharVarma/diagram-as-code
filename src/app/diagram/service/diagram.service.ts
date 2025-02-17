@@ -38,7 +38,6 @@ export class DiagramService {
   }
 
   public getSpecification(): Observable<Specification>{
-    console.log("service called");
       return this.http.get("../../../asset/mock/dac.json");
   }
 

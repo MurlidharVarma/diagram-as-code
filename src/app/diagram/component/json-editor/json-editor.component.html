@@ -1,4 +1,6 @@
-<pre>
-    {{ validation | json}}
-    {{(spec && spec!=null?spec:{"msg": "none"}) | json}}
-</pre>
+<div [formGroup]="form">
+    <div class="err">
+        {{form.controls['spec']?.errors?form.controls['spec']?.errors['error']:""}}
+    </div>
+    <textarea class="text-area" formControlName="spec"></textarea>
+</div>

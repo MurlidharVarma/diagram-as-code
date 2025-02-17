@@ -12,7 +12,7 @@ export class SchemaValidatorService {
   validate: any;
 
   constructor() {
-    this.ajv = new Ajv();
+    this.ajv = new Ajv({allErrors: true});
     this.validate = this.ajv.compile(specSchema);
   }
 
@@ -30,5 +30,18 @@ export class SchemaValidatorService {
         errors: null
       }
     }
+  }
+
+  public isValidSpecText(data: string){
+    let jsonVal = null;
+    try{
+      jsonVal = JSON.parse(data);
+    }catch(ex){
+      return {
+        "isValid": false,
+        "error": "Invalid JSON"
+      };
+    }
+    return this.isValidSpec(jsonVal);
   }
 }

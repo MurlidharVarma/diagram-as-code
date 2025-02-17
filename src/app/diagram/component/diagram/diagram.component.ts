@@ -42,7 +42,6 @@ export class DiagramComponent implements AfterViewInit, OnInit{
   }
 
   public ngAfterViewInit(): void {
-    console.log("list child", this.boxGroups)
     this.boxGroups.changes.subscribe(()=>{
       this.populateBoxMap();
       this.drawConnections();
@@ -57,10 +56,14 @@ export class DiagramComponent implements AfterViewInit, OnInit{
         this.boxMap[box.box.name]=box.elementRef.nativeElement;
       })
     });
-    console.log(this.boxMap);
   }
 
   drawConnections(){
+    if(this.lines.length>0){
+      this.lines.forEach((line:any)=>{
+        line.remove();
+    });
+    }
     this.lines = [];
     this.spec.connections.forEach((connection)=>{
         let src = this.boxMap[connection.src];
@@ -72,7 +75,5 @@ export class DiagramComponent implements AfterViewInit, OnInit{
           this.lines.push(line);
         }
     });
-
-    console.log(this.lines);
   }
 }

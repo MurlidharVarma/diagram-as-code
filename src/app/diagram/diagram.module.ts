@@ -11,6 +11,7 @@ import { EditorComponent } from './component/editor/editor.component';
 import { StoreService } from './service/store.service';
 import { JsonEditorComponent } from './component/json-editor/json-editor.component';
 import { FormEditorComponent } from './component/form-editor/form-editor.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { FormEditorComponent } from './component/form-editor/form-editor.compone
   imports: [
     CommonModule,
     DiagramRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers:[
     DiagramService,
