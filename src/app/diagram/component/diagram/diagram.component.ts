@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChildren, Input, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import Specification from '../../model/specification.model';
 import { DiagramService } from '../../service/diagram.service';
 import { BoxGroupComponent } from '../box-group/box-group.component';
@@ -12,8 +12,7 @@ declare var LeaderLine:any;
   templateUrl: './diagram.component.html',
   styleUrl: './diagram.component.scss'
 })
-export class DiagramComponent implements AfterViewInit{
-  @Input("spec")
+export class DiagramComponent implements AfterViewInit, OnInit{
   spec: Specification;
 
   @ViewChildren(BoxGroupComponent) boxGroups?: QueryList<BoxGroupComponent>;
@@ -35,6 +34,12 @@ export class DiagramComponent implements AfterViewInit{
   }
 
   constructor(private service: DiagramService){}
+
+  public ngOnInit(): void {
+    this.service.getSpec$().subscribe((spec)=>{
+      this.spec = spec;
+    })
+  }
 
   public ngAfterViewInit(): void {
     console.log("list child", this.boxGroups)

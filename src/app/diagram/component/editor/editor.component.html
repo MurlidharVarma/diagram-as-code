@@ -1,12 +1,15 @@
 <div class="main-container">
     <div class="editor-container">
-        <pre>
-            {{(spec && spec!=null?spec:{"msg": "none"}) | json}}
-        </pre>
+        <div class="editor-btn-container">
+            <button (click)="isActive='JSON'" [class.btn-active]="isActive=='JSON'">JSON</button>
+            <button (click)="isActive='FORM'" [class.btn-active]="isActive=='FORM'">FORM</button>
+        </div>
+        <app-json-editor *ngIf="isActive=='JSON'"></app-json-editor>
+        <app-form-editor *ngIf="isActive=='FORM'"></app-form-editor>
     </div>
 
     <div class="diag-container">
-        <diagram [spec]="spec"></diagram>
+        <diagram></diagram>
     </div>
 
 </div>

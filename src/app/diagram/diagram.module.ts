@@ -8,6 +8,9 @@ import { DiagramService } from './service/diagram.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DiagramComponent } from './component/diagram/diagram.component';
 import { EditorComponent } from './component/editor/editor.component';
+import { StoreService } from './service/store.service';
+import { JsonEditorComponent } from './component/json-editor/json-editor.component';
+import { FormEditorComponent } from './component/form-editor/form-editor.component';
 
 
 @NgModule({
@@ -16,6 +19,8 @@ import { EditorComponent } from './component/editor/editor.component';
     BoxGroupComponent,
     DiagramComponent,
     EditorComponent,
+    JsonEditorComponent,
+    FormEditorComponent,
   ],
   imports: [
     CommonModule,
@@ -24,6 +29,7 @@ import { EditorComponent } from './component/editor/editor.component';
   ],
   providers:[
     DiagramService,
+    StoreService,
     JsonPipe
   ],
 })

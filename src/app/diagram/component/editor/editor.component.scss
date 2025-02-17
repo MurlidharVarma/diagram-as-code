@@ -14,3 +14,18 @@
 .diag-container{
     padding: 0px 20px;
 }
+
+.editor-btn-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: space-around;
+
+    button{
+        margin: 5px 10px;
+    }
+}
+
+.btn-active{
+    background: lightgreen;
+}
