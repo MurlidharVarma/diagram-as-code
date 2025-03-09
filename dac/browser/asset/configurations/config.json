@@ -1,0 +1,60 @@
+{
+    "componentTypes":[
+        {
+            "id": "External System",
+            "text": "External System"
+        },
+        {
+            "id": "Pass Through",
+            "text": "Pass Through"
+        },
+        {
+            "id": "Data Processor",
+            "text": "Data Processor"
+        },
+        {
+            "id": "Data Store",
+            "text": "Data Store"
+        }
+    ],
+    "componentTags":[
+        {
+            "id": "ext",
+            "text": "external"
+        },
+        {
+            "id": "enc",
+            "text": "enc"
+        },
+        {
+            "id": "regulatory",
+            "text": "regulatory"
+        },
+        {
+            "id": "pii",
+            "text": "pii"
+        },
+        {
+            "id": "pci",
+            "text": "pci"
+        }
+    ],
+    "connectionIcons":[
+        {
+            "id": "enc",
+            "text": "enc"
+        },
+        {
+            "id": "regulatory",
+            "text": "regulatory"
+        },
+        {
+            "id": "pii",
+            "text": "pii"
+        },
+        {
+            "id": "pci",
+            "text": "pci"
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+{
+    "meta":{
+        "title": "Megatron",
+        "createdOn":"",
+        "updatedOn":"",
+        "updatedBy":"Murlidhar Varma"
+    },
+    "groups":[
+        {
+            "name": "DMZ1",
+            "desc": "Demilitrized Zone 1",
+            "components":[
+                {
+                    "id":"Consumer",
+                    "ref":"1",
+                    "type":"External System",
+                    "name": "Consumer",
+                    "desc": "User Experience",
+                    "tags": ["enc","regulatory","pii","pci"]
+                },
+                {
+                    "id":"Akamai",
+                    "ref":"2",
+                    "type":"External System",
+                    "name": "Akamai",
+                    "desc": "GTM",
+                    "tags": ["ext","enc","regulatory","pii","pci"]
+                }
+            ]
+        },
+        {
+            "name": "DMZ2",
+            "desc": "Demilitrized Zone 2",
+            "components":[
+                {   
+                    "id":"F5-USA",
+                    "ref":"3",
+                    "type":"Pass Through",
+                    "name": "F5",
+                    "desc": "USA",
+                    "tags": ["enc","regulatory","pii","pci"]
+                },
+                {
+                    "id":"F5-India",
+                    "ref":"4",
+                    "type":"Pass Through",
+                    "name": "F5",
+                    "desc": "India",
+                    "tags": ["ext","enc","regulatory","pii","pci"]
+                }
+            ]
+        }
+    ],
+    "connections":[
+        {
+            "src": "Consumer",
+            "dest": "Akamai",
+            "icons":["enc"]
+        },
+        {
+            "src": "Akamai",
+            "dest": "F5-India",
+            "icons":["enc"]
+        },
+        {
+            "src": "Akamai",
+            "dest": "F5-USA",
+            "icons":["enc"]
+        },
+        {
+            "src": "Consumer",
+            "dest": "F5-USA",
+            "icons":["enc"]
+        }
+    ]
+}
