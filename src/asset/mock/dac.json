@@ -55,22 +55,22 @@
         {
             "src": "Consumer",
             "dest": "Akamai",
-            "icon":["enc"]
+            "icons":["enc"]
         },
         {
             "src": "Akamai",
             "dest": "F5-India",
-            "icon":["enc"]
+            "icons":["enc"]
         },
         {
             "src": "Akamai",
             "dest": "F5-USA",
-            "icon":["enc"]
+            "icons":["enc"]
         },
         {
             "src": "Consumer",
             "dest": "F5-USA",
-            "icon":["enc"]
+            "icons":["enc"]
         }
     ]
 }

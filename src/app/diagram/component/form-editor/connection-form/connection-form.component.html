@@ -1,4 +1,4 @@
-<div class="row align-items-center" [formGroup]="connectionForm">
+<!-- <div class="row align-items-center" [formGroup]="connectionForm">
     <div class="col-auto">
         <label for="meta-title" class="form-label">Title</label>
         <input id="meta-title" class="form-control form-control-sm" formControlName="title" placeholder="Title">
@@ -7,4 +7,29 @@
         <label for="meta-updatedBy" class="form-label">Updated By</label>
         <input id="meta-updatedBy" class="form-control form-control-sm" formControlName="updatedBy" placeholder="Updated By">
     </div>
-</div>
+</div> -->
+
+<ng-container [formGroup]="connectionForm">
+    <td>
+        <select id="group-type" class="form-control form-control-sm" formControlName="src" placeholder="Source">
+            <ng-container *ngFor="let compId of componentIds" >
+                <option [value]="compId" [selected]="compId==connectionForm.get('src').value">{{compId}}</option>
+            </ng-container>
+        </select>
+    </td>
+    <td>
+        <select id="group-type" class="form-control form-control-sm" formControlName="dest" placeholder="Destination">
+            <ng-container *ngFor="let compId of componentIds" >
+                <option [value]="compId" [selected]="compId==connectionForm.get('dest').value">{{compId}}</option>
+            </ng-container>
+        </select>
+    </td>
+    <td><input class="mx-1" type="checkbox" formControlName="bidirectional" ></td>
+    <td>
+        <ng-container *ngFor="let icon of icons; let idx=index">
+            <input class="mx-1" type="checkbox" [value]="icon['id']" [checked]="iconsForm.controls[idx].value?'checked':null" (change)="updateIcons($event,idx,icon)">
+            <span>{{icon['text']}}</span>
+        </ng-container>
+    </td>
+    <td><button class="btn btn-sm btn-outline-danger" (click)="delete(index)">Delete</button></td>
+</ng-container>

@@ -38,6 +38,8 @@ export class DiagramComponent implements AfterViewInit, OnInit{
   public ngOnInit(): void {
     this.service.getSpec$().subscribe((spec)=>{
       this.spec = spec;
+      this.populateBoxMap();
+      this.drawConnections();
     })
   }
 
@@ -50,7 +52,7 @@ export class DiagramComponent implements AfterViewInit, OnInit{
 
   populateBoxMap(){
     this.boxMap = {};
-    this.boxGroups.forEach((group)=>{
+    this.boxGroups?.forEach((group)=>{
       group.boxes.forEach((box)=>{
         this.boxMap[box.box.id]=box.elementRef.nativeElement;
         this.boxMap[box.box.name]=box.elementRef.nativeElement;
@@ -65,7 +67,7 @@ export class DiagramComponent implements AfterViewInit, OnInit{
     });
     }
     this.lines = [];
-    this.spec.connections.forEach((connection)=>{
+    this.spec?.connections?.forEach((connection)=>{
         let src = this.boxMap[connection.src];
         let dest = this.boxMap[connection.dest];
         let option = this.lineOptions["default"];

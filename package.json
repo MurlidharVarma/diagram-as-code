@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "ghBuild": "ng build --base-href dac",
+    "deploy": "set NODE_DEBUG=gh-pages && npm run ghBuild && gh-pages -d dist"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +32,7 @@
     "@angular-devkit/build-angular": "^19.0.5",
     "@angular/cli": "^19.0.5",
     "@angular/compiler-cli": "^19.0.0",
+    "gh-pages": "^6.3.0",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.4.0",
     "karma": "~6.4.0",

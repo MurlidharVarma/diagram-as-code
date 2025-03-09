@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, Validators, Form } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,7 @@ import { FormGroup, FormBuilder, FormArray, Validators, Form } from '@angular/fo
   templateUrl: './group-form.component.html',
   styleUrl: './group-form.component.scss'
 })
-export class GroupFormComponent {
+export class GroupFormComponent implements OnInit{
 
   @Input("form")
   groupForm: FormGroup | null;
@@ -19,6 +19,9 @@ export class GroupFormComponent {
 
   constructor(private fb: FormBuilder){
     // this.componentsFormArray = this.groupForm.get("components") as FormArray;
+   
+  }
+  ngOnInit(): void {
   }
 
   addComponent(){
@@ -32,5 +35,12 @@ export class GroupFormComponent {
     });
     let fa:FormArray = this.groupForm.get('components') as FormArray;
     fa.push(compForm);
+  }
+
+  deleteComponent(idx){
+    let val = this.groupForm['controls']['components'].value;
+    this.groupForm['controls']['components']['controls'].splice(idx,1);
+    val.splice(idx,1);
+    this.groupForm['controls']['components'].reset(val);
   }
 }

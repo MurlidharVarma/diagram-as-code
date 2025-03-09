@@ -18,7 +18,8 @@ export class ComponentIdsService {
     }
   
     public setCompomentIds(ids:[]){
-      this.componentIds.next(ids.sort());
+      let s = new Set(ids);
+      this.componentIds.next([...s].sort());
     }
   
     public getComponentTags(){

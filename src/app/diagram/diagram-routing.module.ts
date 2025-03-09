@@ -5,7 +5,7 @@ import { EditorComponent } from './component/editor/editor.component';
 import { FormEditorComponent } from './component/form-editor/form-editor.component';
 
 const routes: Routes = [
-  { path: "", component: FormEditorComponent},
+  { path: "", component: EditorComponent},
 ];
 
 @NgModule({

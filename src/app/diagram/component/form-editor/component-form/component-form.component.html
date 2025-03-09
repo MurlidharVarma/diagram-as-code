@@ -1,4 +1,4 @@
-<div class="row align-items-center" [formGroup]="componentForm">
+<!-- <div class="row align-items-center" [formGroup]="componentForm">
     <div class="col-auto">
         <label for="group-id" class="form-label">ID</label>
         <input id="group-id" class="form-control form-control-sm" formControlName="id" placeholder="ID">
@@ -32,4 +32,35 @@
             </ng-container>
         </div>
     </div>
-</div>
+</div> -->
+
+<ng-container [formGroup]="componentForm">
+    <td>
+        <input id="group-id" class="form-control form-control-sm" formControlName="id" placeholder="ID" (change)="updateMaster()">
+    </td>
+    <td>
+        <select id="group-type" class="form-control form-control-sm" formControlName="type" placeholder="Type">
+            <ng-container *ngFor="let type of types" >
+                <option [value]="type['id']" [selected]="type['id']==componentForm.get('type').value">{{type['text']}}</option>
+            </ng-container>
+        </select>
+    </td>
+    <td>
+        <input id="group-name" class="form-control form-control-sm" formControlName="name" placeholder="Name">
+    </td>
+    <td>
+        <input id="group-ref" class="form-control form-control-sm" formControlName="id" placeholder="Reference Id">
+    </td>
+    <td>
+        <input id="group-desc" class="form-control form-control-sm" formControlName="desc" placeholder="Description">
+    </td>
+    <td>
+        <ng-container *ngFor="let tag of tags; let idx=index">
+            <input class="mx-1" type="checkbox" [value]="tag['id']" [checked]="tagsForm.controls[idx]?.value?'checked':null" (change)="updateTags($event,idx,tag)">
+            <span>{{tag['text']}}</span>
+        </ng-container>
+    </td>
+    <td>
+        <button class="btn btn-sm btn-outline-danger" (click)="delete(index)">Delete</button>
+    </td>
+</ng-container>

@@ -17,7 +17,6 @@ export class ComponentTypeService {
       this.http.get("../../../asset/configurations/config.json").subscribe(
         (data:any)=>{
           this.componentTypes.next(data['componentTypes']);
-          console.log("Fetched Component Types")
         },
         (err) =>{
           console.error("Error fetching Component Types: ",err);
