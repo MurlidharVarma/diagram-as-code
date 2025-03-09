@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "ghBuild": "ng build --configuration development --base-href diagram-as-code",
-    "deploy": "set NODE_DEBUG=gh-pages && npm run ghBuild && gh-pages -d dist"
+    "deploy": "set NODE_DEBUG=gh-pages && npm run ghBuild && gh-pages -d dist/dac/browser"
   },
   "private": true,
   "dependencies": {
