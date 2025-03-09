@@ -5,4 +5,4 @@ Angular version 19.0.5.
 Attempt to create diagram as code. Demo below.
 
 Demo here
-https://murlidharvarma.github.io/dac
+https://murlidharvarma.github.io/diagram-as-code/index.html
