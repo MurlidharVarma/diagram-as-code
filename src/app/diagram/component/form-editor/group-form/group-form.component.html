@@ -1,0 +1,18 @@
+<div class="row align-items-center" [formGroup]="groupForm">
+    <div class="col-12 d-flex justify-content-between p-2 bg-primary">
+        <span class="container-name">{{groupForm.controls['name'].value}}</span>
+        <button class="btn btn-outline-light btn-sm" (click)="addComponent()">Add Component</button>
+    </div>
+    <hr>
+    <div class="col-auto">
+        <label for="group-name" class="form-label">Name</label>
+        <input id="group-name" class="form-control form-control-sm" formControlName="name" placeholder="Name">
+    </div>
+    <div class="col-auto">
+        <label for="group-desc" class="form-label">Desc</label>
+        <input id="group-desc" class="form-control form-control-sm" formControlName="desc" placeholder="Description">
+    </div>
+    <div class="col-auto">
+        <component-form *ngFor="let component of (groupForm.get('components'))['controls']; let idx=index" [form]="component" [index]="idx"></component-form>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="row align-items-center" [formGroup]="componentForm">
+    <div class="col-auto">
+        <label for="group-id" class="form-label">ID</label>
+        <input id="group-id" class="form-control form-control-sm" formControlName="id" placeholder="ID">
+    </div>
+    <div class="col-auto">
+        <label for="group-type" class="form-label">Type</label>
+        <select id="group-type" class="form-control form-control-sm" formControlName="type" placeholder="Type">
+            <ng-container *ngFor="let type of types" >
+                <option [value]="type['id']" [selected]="type['id']==componentForm.get('type').value">{{type['text']}}</option>
+            </ng-container>
+        </select>
+    </div>
+    <div class="col-auto">
+        <label for="group-name" class="form-label">Name</label>
+        <input id="group-name" class="form-control form-control-sm" formControlName="name" placeholder="Name">
+    </div>
+    <div class="col-auto">
+        <label for="group-ref" class="form-label">Ref</label>
+        <input id="group-ref" class="form-control form-control-sm" formControlName="id" placeholder="Reference Id">
+    </div>
+    <div class="col-auto">
+        <label for="group-desc" class="form-label">Desc</label>
+        <input id="group-desc" class="form-control form-control-sm" formControlName="desc" placeholder="Description">
+    </div>
+    <div class="col-auto">
+        <label for="group-tags" class="form-label">Tags</label>
+        <div>
+            <ng-container *ngFor="let tag of tags; let idx=index">
+                <input class="mx-1" type="checkbox" [value]="tag['id']" [checked]="tagsForm.controls[idx].value?'checked':null" (change)="updateTags($event,idx,tag)">
+                <span>{{tag['text']}}</span>
+            </ng-container>
+        </div>
+    </div>
+</div>

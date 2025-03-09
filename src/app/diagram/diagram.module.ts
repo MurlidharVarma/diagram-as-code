@@ -12,6 +12,13 @@ import { StoreService } from './service/store.service';
 import { JsonEditorComponent } from './component/json-editor/json-editor.component';
 import { FormEditorComponent } from './component/form-editor/form-editor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ComponentFormComponent } from './component/form-editor/component-form/component-form.component';
+import { ConnectionFormComponent } from './component/form-editor/connection-form/connection-form.component';
+import { MetaFormComponent } from './component/form-editor/meta-form/meta-form.component';
+import { GroupFormComponent } from './component/form-editor/group-form/group-form.component';
+import { ComponentTypeService } from './service/master/component-type.service';
+import { ComponentTagsService } from './service/master/component-tags.service';
+import { ComponentIdsService } from './service/master/component-ids.service';
 
 
 @NgModule({
@@ -22,6 +29,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     EditorComponent,
     JsonEditorComponent,
     FormEditorComponent,
+    ComponentFormComponent,
+    ConnectionFormComponent,
+    MetaFormComponent,
+    GroupFormComponent,
+    ConnectionFormComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +45,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   providers:[
     DiagramService,
     StoreService,
+    ComponentTypeService,
+    ComponentTagsService,
+    ComponentIdsService,
     JsonPipe
   ],
 })

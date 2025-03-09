@@ -1,1 +1,20 @@
-<p>form-editor works!</p>
+<div [formGroup]="specForm" class="ctn">
+    <div class="btn-container d-flex flex-row-reverse">
+        <button class="btn btn-primary" (click)="addGroup()">Add Group</button>
+    </div>
+    <div class="any-container">
+        <meta-form [form]="specForm.controls.meta"></meta-form>
+    </div>
+    <div>&nbsp;</div>
+    <div class="any-container" *ngIf="specForm.controls.groups.controls.length>0">
+        <group-form *ngFor="let group of specForm.controls.groups.controls; let idx=index" [form]="group" [index]="idx"></group-form>
+    </div>
+    <div>&nbsp;</div>
+    <div class="any-container" *ngIf="specForm.controls.connections.controls.length>0">
+        <connection-form *ngFor="let connection of specForm.controls.connections.controls; let idx=index" [form]="connection" [index]="idx"></connection-form>
+    </div>
+</div>
+
+<div>
+    <pre>{{this.specForm.value | json}}</pre>
+</div>
