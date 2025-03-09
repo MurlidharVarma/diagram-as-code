@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/diagram/component/editor/editor.component.scss"],
-  "sourcesContent": [".main-container{\n    display: flex;\n    flex-direction: row;\n    justify-content: flex-start;\n    align-items: flex-start;\n}\n\n.editor-container{\n    width: 60%;\n    padding: 0px 20px;\n    font-size: 9px;\n}\n\n.diag-container{\n    padding: 0px 20px;\n}\n\n.editor-btn-container{\n    display: flex;\n    flex-direction: row;\n    justify-content: flex-start;\n    align-items: space-around;\n\n    button{\n        margin: 5px 10px;\n    }\n}\n\n.btn-active{\n    background: lightgreen;\n}"],
-  "mappings": ";AAAA,CAAA;AACI,WAAA;AACA,kBAAA;AACA,mBAAA;AACA,eAAA;;AAGJ,CAAA;AACI,SAAA;AACA,WAAA,IAAA;AACA,aAAA;;AAGJ,CAAA;AACI,WAAA,IAAA;;AAGJ,CAAA;AACI,WAAA;AACA,kBAAA;AACA,mBAAA;AACA,eAAA;;AAEA,CANJ,qBAMI;AACI,UAAA,IAAA;;AAIR,CAAA;AACI,cAAA;;",
-  "names": []
-}
