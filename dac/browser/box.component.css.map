@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/diagram/component/box/box.component.scss"],
+  "sourcesContent": [".box-container{\n    width: 150px;\n    height: 75px;\n\n    border-radius: 5px;\n    border-width: 1px;\n    border-color: black;\n    border-style: solid;\n\n    background: yellow;\n\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n}\n\n.box-name{\n    font-family: 'Courier New', Courier, monospace;\n    font-size: 12px;\n    font-weight: normal;\n}\n\n.box-desc{\n    font-family: 'Courier New', Courier, monospace;\n    font-size: 10px;\n    font-weight: lighter;\n}"],
+  "mappings": ";AAAA,CAAA;AACI,SAAA;AACA,UAAA;AAEA,iBAAA;AACA,gBAAA;AACA,gBAAA;AACA,gBAAA;AAEA,cAAA;AAEA,WAAA;AACA,kBAAA;AACA,mBAAA;AACA,eAAA;;AAGJ,CAAA;AACI;IAAA,aAAA;IAAA,OAAA;IAAA;AACA,aAAA;AACA,eAAA;;AAGJ,CAAA;AACI;IAAA,aAAA;IAAA,OAAA;IAAA;AACA,aAAA;AACA,eAAA;;",
+  "names": []
+}

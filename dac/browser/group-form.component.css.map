@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/diagram/component/form-editor/group-form/group-form.component.scss"],
+  "sourcesContent": [".container-name{\n    color: white;\n    text-transform: uppercase;\n    vertical-align: middle;\n}"],
+  "mappings": ";AAAA,CAAA;AACI,SAAA;AACA,kBAAA;AACA,kBAAA;;",
+  "names": []
+}
